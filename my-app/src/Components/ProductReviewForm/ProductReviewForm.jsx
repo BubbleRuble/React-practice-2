@@ -73,13 +73,14 @@ export class ProductReviewForm extends React.Component {
           <div>
             <label htmlFor="product">Product</label>
             <div>
-              <Field name="product" as="select" />
+              <Field name="product" as="select">
               <option value="">Select a product</option>
-              {product.map((product, idx) => (
+              {products.map((product, idx) => (
                 <option value={product} key={idx}>
                   {product}
                 </option>
               ))}
+              </Field>
               <FormError name="email" />
             </div>
           </div>
