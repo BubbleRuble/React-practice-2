@@ -1,19 +1,29 @@
-import { Component } from "react";
+import { Component } from 'react';
 import { GlobalStyle } from './GlobalStyle';
-import { LoginForm } from "./Components/LoginForm";
-import {ProductReviewForm} from './Components/ProductReviewForm/ProductReviewForm'
+import { LoginForm } from './Components/LoginForm';
+import { ProductReviewForm } from './Components/ProductReviewForm/ProductReviewForm';
+import PokemonForm from './Components/Pokemons/PokemonForm';
+import PokemonInfo from './Components/Pokemons/PokemonInfo';
+// import PokemonInfo from './Components/Pokemons/PokemonInfo';
 
-export class App extends Component {
+class App extends Component {
   state = {
+    pokemonName: '',
+  };
 
-  }
+  handleFormSubmit = pokemonName => {
+    this.setState({ pokemonName });
+  };
+
   render() {
     return (
-      <>
-      {/* <LoginForm/> */}
-      {/* <ProductReviewForm/> */}
-      </>
-    )
+      <div style={{ maxWidth: 1170, margin: '0 auto', padding: 20 }}>
+        <PokemonForm onSubmit={this.handleFormSubmit} />
+        <PokemonInfo pokemonName={this.state.pokemonName}/>
+        {/* <LoginForm/>  */}
+        {/* <ProductReviewForm/>  */}
+      </div>
+    );
   }
 }
 
