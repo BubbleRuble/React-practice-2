@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import { GlobalStyle } from './GlobalStyle';
 import { LoginForm } from './Components/LoginForm';
 import { ProductReviewForm } from './Components/ProductReviewForm/ProductReviewForm';
 import PokemonForm from './Components/Pokemons/PokemonForm';
